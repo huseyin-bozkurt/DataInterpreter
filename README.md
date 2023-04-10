@@ -6,13 +6,13 @@ mvnw komutunun calisabilmesi icin maven kurulumu yapilmis olmali ve JAVA_HOME de
 Uygulama saglikli bir sekilde calisabilmek icin, MongoDB ve Apache Kafka kurulumuna ihtiyac duymaktadir. Harici veri tabani olarak ise H2 veritabani kullanmaktadir, gomulu olarak uygulama icerisindedir ve kurulum gerektirmemektedir. Ilgili kurulumlar tamamlandiktan sonra uygulama icerisinde bulunan application.properties dosyasinda ilgili kurulum bilgileri (kafkaServer=127.0.0.1:9092, mongoConnectionString=mongodb://localhost:27017/homework) girilmelidir.
 Uygulama hem birim hem entegrasyon testi icermektedir. Eger, MongoDB kurulumu yapmadan testlerin calisitirilmasi isteniyorsa, entegrasyon testleri pas gecilmelidir. Bunun icin uygulamanin bulundugu klasor icerisinde
 ```
-mvnw install -Dtest=!*IntegrationTests*
+mvn install -Dtest=!*IntegrationTests*
 ```
 komutu kullanilmalidir.
 
 Eger, MongoDB kurulumu yapildiysa ve uygulama icerisinde bulunan application.properties dosyasinda ilgili kurulum bilgileri (kafkaServer=127.0.0.1:9092, mongoConnectionString=mongodb://localhost:27017/homework) girildiyse entegrasyon testeri de calistirilabilir. Bunun icin uygulamanin bulundugu klasor icerisinde
 ```
-mvnw install
+mvn install
 ```
 komutu kullanilmalidir.
 
